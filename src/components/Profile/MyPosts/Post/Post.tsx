@@ -1,38 +1,16 @@
 import React from 'react';
-import s from './MyPosts.module.css';
+import s from './Post.module.css';
 
-const MyPosts = () => {
+const Post = (props:any) => {
     return (
+        <div className={s.item}>
+            <img src="https://dic.academic.ru/pictures/wiki/files/98/butters_south_park.jpg"/>
+            {props.message}
             <div>
-                My posts
-                <div>
-                    <textarea></textarea>
-                    <button>Add post</button>
-                </div>
-                <div className={s.posts}>
-                    <div className={s.item}>
-                        <img src="https://dic.academic.ru/pictures/wiki/files/98/butters_south_park.jpg"/>
-                        post 1
-                    </div>
-                    <div className={s.item}>
-                        <img src="https://dic.academic.ru/pictures/wiki/files/98/butters_south_park.jpg"/>
-                        post 2
-                    </div>
-                    <div className={s.item}>
-                        <img src="https://dic.academic.ru/pictures/wiki/files/98/butters_south_park.jpg"/>
-                        post 3
-                    </div>
-                    <div className={s.item}>
-                        <img src="https://dic.academic.ru/pictures/wiki/files/98/butters_south_park.jpg"/>
-                        post 4
-                    </div>
-                    <div className={s.item}>
-                        <img src="https://dic.academic.ru/pictures/wiki/files/98/butters_south_park.jpg"/>
-                        post 5
-                    </div>
-                </div>
+                <span>{props.likesCount}</span>
             </div>
+        </div>
     );
 };
 
-export default MyPosts;
+export default Post;
