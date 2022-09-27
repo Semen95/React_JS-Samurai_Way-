@@ -7,7 +7,7 @@ const Post = (props:any) => {
             <img src="https://dic.academic.ru/pictures/wiki/files/98/butters_south_park.jpg"/>
             {props.message}
             <div>
-                <span>{props.likesCount}</span>
+                <span>like:{props.likesCount}</span>
             </div>
         </div>
     );
