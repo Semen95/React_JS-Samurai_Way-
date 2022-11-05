@@ -1,13 +1,14 @@
 import React from 'react';
-import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-const Profile = (props:any) => {
 
+const Profile = (props: any) => {
     return (
+        //КОНТЕЙНЕРНАЯ КОМПОНЕНТА
         <div>
             <ProfileInfo/>
-            <MyPosts posts={props.state.posts}/>
+            <MyPostsContainer/>
         </div>
     );
 };
