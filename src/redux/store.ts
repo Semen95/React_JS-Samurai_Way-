@@ -8,11 +8,11 @@ export type PostType = {
     message: string,
     likesCount: number
 }
-export type DialogType = {
+type DialogType = {
     id: number,
     name: string,
 }
-export type MessageType = {
+type MessageType = {
     id: number
     message: string
 }
@@ -28,10 +28,30 @@ export type DialogsPageType = {
     newMessageBody: string;
 }
 
+export type UserType = {
+    id: number
+    photoUrl: string
+    followed: boolean
+    fullName: string
+    status: string
+    location: UsersLocationType
+}
+
+export type UsersLocationType = {
+    city: string
+    country: string
+}
+
+
+export type UserPageType = {
+    users: Array<UserType>
+}
+
 export type StateType = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
     sidebar: SidebarType
+    usersPage: UserPageType
 }
 
 export type StoreType = {
@@ -82,7 +102,34 @@ let store: StoreType = {
             ],
             newMessageBody: ""
         },
-        sidebar: {}
+        sidebar: {},
+        usersPage: {
+            users: [
+                {
+                    id: 1,
+                    photoUrl: "https://png.pngtree.com/element_our/png_detail/20181206/users-vector-icon-png_260862.jpg",
+                    followed: false,
+                    fullName: "Dmitry",
+                    status: "I am a boss",
+                    location: {city: "Minsk", country: "Belarus"}
+                },
+                {
+                    id: 2,
+                    photoUrl: "https://png.pngtree.com/element_our/png_detail/20181206/users-vector-icon-png_260862.jpg",
+                    followed: true,
+                    fullName: "Ivan",
+                    status: "I am a boss too",
+                    location: {city: "Moscow", country: "Russia"}
+                },
+                {
+                    id: 3,
+                    photoUrl: "https://png.pngtree.com/element_our/png_detail/20181206/users-vector-icon-png_260862.jpg",
+                    followed: false,
+                    fullName: "Andrew",
+                    status: "I am a boss too",
+                    location: {city: "Kiev", country: "Ukraine"}
+                }]
+        }
     },
     _callSubscriber(_state: StateType) {
         console.log('state was changed');
