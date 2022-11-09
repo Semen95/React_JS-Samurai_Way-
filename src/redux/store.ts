@@ -100,7 +100,7 @@ let store: StoreType = {
                 {id: 3, message: "Yo"},
                 {id: 4, message: "Niga"}
             ],
-            newMessageBody: ""
+            newMessageBody: "",
         },
         sidebar: {},
         usersPage: {
